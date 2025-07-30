@@ -1,5 +1,4 @@
 import { View, Text, StyleSheet, Pressable } from "react-native";
-import Button from "../components/button";
 import { Link } from "expo-router";
 
 export default function Home() {
@@ -7,16 +6,22 @@ export default function Home() {
         <View style={styles.container}>
             <Text style={styles.title}>Notícias mais curtidas</Text>
 
-            <Text>Noticia 1</Text>
-            <Text>Noticia 2</Text>
+            <Text>Artigo 1</Text>
+            <Text>Artigo 2</Text>
 
-        <Link href="/login" asChild>
-            <Pressable style={{ padding: 10, backgroundColor: 'blue' }}>
-                <Text style={{ color: 'white' }}>Ir para Login</Text>
-            </Pressable>
-        </Link>
+            <Link href="/login" asChild>
+                <Pressable style={{ padding: 10, backgroundColor: 'blue' }}>
+                    <Text style={{ color: 'white' }}>Ir para Login</Text>
+                </Pressable>
+            </Link>
 
-        <Button title="Cadastrar" />
+            <Link href="/perfil" asChild>
+                <Pressable style={{ padding: 10, backgroundColor: 'blue' }}>
+                    <Text style={{ color: 'white' }}>Perfil</Text>
+                </Pressable>
+            </Link>
+
+
         </View>
     );
 }

@@ -1,15 +1,21 @@
 import { View, Text, StyleSheet, TextInput, Pressable } from "react-native";
-import Button from "../../components/button";
 import { useState } from "react";
 import { Link } from "expo-router";
 
-export default function Login() {
+export default function Cadastro() {
     const [email, setEmail] = useState("");
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Bem-vindo novamente</Text>
+            <Text style={styles.title}>Bem-vindo</Text>
 
+            <TextInput
+                onChangeText={setEmail}
+                value={email}
+                style={styles.input}
+                placeholder="Digite seu nome"
+                keyboardType="name-phone-pad"
+            />
             <TextInput
                 onChangeText={setEmail}
                 value={email}
@@ -24,9 +30,9 @@ export default function Login() {
                 secureTextEntry={true}
             />
 
-            <Link href="/cadastro" asChild>
+            <Link href="/login" asChild>
                 <Pressable style={{ padding: 10, backgroundColor: 'blue' }}>
-                    <Text style={{ color: 'white' }}>Cadastro</Text>
+                    <Text style={{ color: 'white' }}>Login</Text>
                 </Pressable>
             </Link>
 
