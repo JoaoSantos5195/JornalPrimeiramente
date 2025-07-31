@@ -1,9 +1,14 @@
 import { View, Image, TouchableOpacity, StyleSheet } from 'react-native';
+import { router } from 'expo-router';
 
 export default function Footer() {
   const handlePress = (item) => {
     console.log(`Clicou em: ${item}`);
-    // Aqui você pode navegar para outra tela ou executar uma ação
+    if (item === 'Home') router.push('/');
+    //TODO: FALTA O SEARCH
+    if (item === 'Profile') router.push('/profile');
+    if (item === 'Liked') router.push('/profile');
+    if (item === 'Settings') router.push('/settingsTab');
   };
 
   return (
@@ -20,8 +25,12 @@ export default function Footer() {
         <Image source={require('./profileIcon.png')} style={styles.icon} />
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={() => handlePress('Settings')}>
+      <TouchableOpacity onPress={() => handlePress('Liked')}>
         <Image source={require('./heart.png')} style={styles.icon} />
+      </TouchableOpacity>
+      
+      <TouchableOpacity onPress={() => handlePress('Settings')}>
+        <Image source={require('./settings.png')} style={styles.icon} />
       </TouchableOpacity>
     </View>
   );

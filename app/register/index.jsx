@@ -1,11 +1,13 @@
 import { View, Text, StyleSheet, TextInput, Pressable } from "react-native";
 import { useState } from "react";
 import { Link } from "expo-router";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Cadastro() {
     const [email, setEmail] = useState("");
 
     return (
+    <SafeAreaView style={styles.safeContainer}>
         <View style={styles.container}>
             <Text style={styles.title}>Bem-vindo</Text>
 
@@ -44,10 +46,14 @@ export default function Cadastro() {
             </Link>
 
         </View>
+    </SafeAreaView>        
     );
 }
 
 const styles = StyleSheet.create({
+    safeContainer:{
+        flex: 1,
+    },
     container: {
         gap: 16,
         justifyContent: "center",

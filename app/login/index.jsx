@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TextInput, Pressable } from "react-native";
+import { View, Text, StyleSheet, TextInput, Pressable, SafeAreaView } from "react-native";
 import Button from "../../components/button";
 import { useState } from "react";
 import { Link } from "expo-router";
@@ -7,41 +7,46 @@ export default function Login() {
     const [email, setEmail] = useState("");
 
     return (
-        <View style={styles.container}>
-            <Text style={styles.title}>Bem-vindo novamente</Text>
+        <SafeAreaView style={styles.safeContainer}>
+            <View style={styles.container}>
+                <Text style={styles.title}>Bem-vindo novamente</Text>
 
-            <TextInput
-                onChangeText={setEmail}
-                value={email}
-                style={styles.input}
-                placeholder="Digite seu e-mail"
-                keyboardType="email-address"
-            />
+                <TextInput
+                    onChangeText={setEmail}
+                    value={email}
+                    style={styles.input}
+                    placeholder="Digite seu e-mail"
+                    keyboardType="email-address"
+                />
 
-            <TextInput
-                style={styles.input}
-                placeholder="Digite sua senha"
-                secureTextEntry={true}
-            />
+                <TextInput
+                    style={styles.input}
+                    placeholder="Digite sua senha"
+                    secureTextEntry={true}
+                />
 
-            <Link href="/cadastro" asChild>
-                <Pressable style={{ padding: 10, backgroundColor: 'blue' }}>
-                    <Text style={{ color: 'white' }}>Cadastro</Text>
-                </Pressable>
-            </Link>
+                <Link href="/register" asChild>
+                    <Pressable style={{ padding: 10, backgroundColor: 'blue' }}>
+                        <Text style={{ color: 'white' }}>Cadastro</Text>
+                    </Pressable>
+                </Link>
 
 
-            <Link href="/" asChild>
-                <Pressable style={{ padding: 10, backgroundColor: 'blue' }}>
-                    <Text style={{ color: 'white' }}>Sair</Text>
-                </Pressable>
-            </Link>
+                <Link href="/" asChild>
+                    <Pressable style={{ padding: 10, backgroundColor: 'blue' }}>
+                        <Text style={{ color: 'white' }}>Sair</Text>
+                    </Pressable>
+                </Link>
 
-        </View>
+            </View>
+        </SafeAreaView>
     );
 }
 
 const styles = StyleSheet.create({
+    safeContainer:{
+        flex: 1,
+    },
     container: {
         gap: 16,
         justifyContent: "center",
