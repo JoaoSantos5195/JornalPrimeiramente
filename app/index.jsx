@@ -1,4 +1,4 @@
-import { SafeAreaView, Text, StyleSheet, Pressable } from "react-native";
+import { SafeAreaView, Text, StyleSheet, Pressable, View } from "react-native";
 import { Link } from "expo-router";
 
 export default function Home() {
