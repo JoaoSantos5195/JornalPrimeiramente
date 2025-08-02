@@ -1,4 +1,4 @@
-import { View, Image, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Image, TouchableOpacity, StyleSheet, Platform } from 'react-native';
 import { router } from 'expo-router';
 
 export default function Footer() {
@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 0,
     backgroundColor: '#f0f0f0', // Pode mudar a cor do fundo do footer aqui
+    marginBottom: Platform.OS === 'android' ? 48:20 //Add um espaço para os botoes no Android
   },
   icon: {
     width: 30,
