@@ -21,7 +21,6 @@
     "expo-router": "^5.1.4",
     "expo-status-bar": "~2.2.3",
     "expo-system-ui": "^5.0.10",
-    "homebrew": "^0.1.0",
     "node-modules": "^0.0.1",
     "react": "19.0.0",
     "react-dom": "19.0.0",
